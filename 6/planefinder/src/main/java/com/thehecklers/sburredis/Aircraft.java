@@ -1,9 +1,9 @@
 package com.thehecklers.sburredis;
 
-
 import java.time.Instant;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RedisHash
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Aircraft {
 
@@ -42,39 +43,4 @@ public class Aircraft {
     @JsonProperty("bds40_seen_time")
     private Instant bds40SeenTime;
 
-    public String getLastSeenTime() {
-        return lastSeenTime.toString();
-    }
-
-    public void setLastSeenTime(String lastSeenTime) {
-    if (null != lastSeenTime) {
-    this.lastSeenTime = Instant.parse(lastSeenTime);
-    } else {
-    this.lastSeenTime = Instant.ofEpochSecond(0);
-    }}
-
-    public String getPosUpdateTime() {
-        return posUpdateTime.toString();
-    }
-
-    public void setPosUpdateTime(String posUpdateTime) {
-        if (null != posUpdateTime) {
-        this.posUpdateTime = Instant.parse(posUpdateTime);
-        } else {
-        this.posUpdateTime = Instant.ofEpochSecond(0);
-        }
-    }
-    public String getBds40SeenTime() {
-        return bds40SeenTime.toString();
-    }
-
-    
-
-    public void setBds40SeenTime(String bds40SeenTime) {
-        if (null != bds40SeenTime) {
-            this.bds40SeenTime = Instant.parse(bds40SeenTime);
-        } else {
-            this.bds40SeenTime = Instant.ofEpochSecond(0);
-        }
-    }
 }
