@@ -1,10 +1,10 @@
-package com.thehecklers.planefinder;
+package com.planefinder.jpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PlanefinderApplicationTests {
+class JpaApplicationTests {
 
 	@Test
 	void contextLoads() {
