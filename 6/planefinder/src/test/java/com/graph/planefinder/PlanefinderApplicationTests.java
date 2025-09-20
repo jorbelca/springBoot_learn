@@ -1,4 +1,4 @@
-package com.thehecklers.planefinder;
+package com.graph.planefinder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

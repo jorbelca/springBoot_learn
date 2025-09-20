@@ -1,4 +1,4 @@
-package com.thehecklers.planefinder;
+package com.graph.planefinder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
