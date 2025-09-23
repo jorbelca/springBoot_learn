@@ -4,8 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.thehecklers.aircraftpositions.AircraftRepository;
-
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
