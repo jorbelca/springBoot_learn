@@ -41,4 +41,10 @@ public class Aircraft {
     private Instant posUpdateTime;
     @JsonProperty("bds40_seen_time")
     private Instant bds40SeenTime;
+
+    // Getter explícito para asegurar disponibilidad aunque falle el annotation
+    // processing
+    public String getReg() {
+        return this.reg;
+    }
 }

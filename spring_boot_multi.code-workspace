@@ -1,0 +1,26 @@
+{
+  "folders": [
+    { "path": "." },
+    { "path": "3/sbur-rest-demo" },
+    { "path": "4/sbur-rest-demo" },
+    { "path": "5/sbur-rest-demo" },
+    { "path": "6/planefinder" },
+    { "path": "8/planefinder" },
+    { "path": "8/aircraft-positions" },
+    { "path": "9/aircraft-positions" },
+    { "path": "demo_spring" }
+  ],
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.import.maven.enabled": true,
+    "java.import.gradle.enabled": true,
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "java.maven.downloadSources": true,
+    "java.compile.nullAnalysis.mode": "automatic",
+    "[java]": {
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "never"
+      }
+    }
+  }
+}
