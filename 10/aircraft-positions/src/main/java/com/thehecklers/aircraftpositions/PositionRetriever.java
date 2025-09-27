@@ -11,11 +11,16 @@ public class PositionRetriever {
     private final AircraftRepository repository;
     private final WebClient client = WebClient.create("http://localhost:7634");
 
-    Iterable<Aircraft> retrieveAircraftPositions() {
+    // Nuevo: sobrecarga sin argumentos para tests/controlador
+    public Iterable<Aircraft> retrieveAircraftPositions() {
+        return retrieveAircraftPositions("/aircraft");
+    }
+
+    Iterable<Aircraft> retrieveAircraftPositions(String endpoint) {
         repository.deleteAll();
 
         client.get()
-                .uri("/aircraft")
+                .uri((null != endpoint) ? endpoint : "")
                 .retrieve()
                 .bodyToFlux(Aircraft.class)
                 .filter(ac -> ac.getReg() != null && !ac.getReg().isBlank())

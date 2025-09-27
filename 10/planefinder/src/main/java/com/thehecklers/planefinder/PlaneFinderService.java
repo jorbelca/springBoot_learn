@@ -3,7 +3,7 @@ package com.thehecklers.planefinder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.SneakyThrows;
+//import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -18,12 +18,15 @@ public class PlaneFinderService {
     private URL acURL;
     private final ObjectMapper om;
 
-    @SneakyThrows
-    public PlaneFinderService(PlaneRepository repo) {
+    
+     public PlaneFinderService(PlaneRepository repo) {
         this.repo = repo;
-
-        acURL = new URL("http://192.168.1.193/ajax/aircraft");
-        om = new ObjectMapper();
+        try {
+            this.acURL = new URL("http://192.168.1.193/ajax/aircraft");
+        } catch (java.net.MalformedURLException e) {
+            throw new IllegalArgumentException("URL inválida para aircraft feed", e);
+        }
+        this.om = new ObjectMapper();
     }
 
     public Flux<Aircraft> getAircraft() {
