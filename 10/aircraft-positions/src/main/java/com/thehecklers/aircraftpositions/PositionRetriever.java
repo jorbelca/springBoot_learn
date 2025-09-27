@@ -1,15 +1,15 @@
 package com.thehecklers.aircraftpositions;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-@AllArgsConstructor
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Component
 public class PositionRetriever {
     private final AircraftRepository repository;
-    private final WebClient client =
-            WebClient.create("http://localhost:7634");
+    private final WebClient client = WebClient.create("http://localhost:7634");
 
     Iterable<Aircraft> retrieveAircraftPositions() {
         repository.deleteAll();
@@ -18,7 +18,7 @@ public class PositionRetriever {
                 .uri("/aircraft")
                 .retrieve()
                 .bodyToFlux(Aircraft.class)
-                .filter(ac -> !ac.getReg().isEmpty())
+                .filter(ac -> ac.getReg() != null && !ac.getReg().isBlank())
                 .toStream()
                 .forEach(repository::save);
 
