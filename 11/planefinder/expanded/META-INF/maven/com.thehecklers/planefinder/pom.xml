@@ -58,15 +58,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.3.4</version>
+				
 				<configuration>
-				<image>
-				<name>jorbelca/${project.artifactId}</name>
-				  <builder>paketobuildpacks/builder-jammy-base</builder>
-				<env>
-				<BP_JVM_VERSION>21</BP_JVM_VERSION>
-				</env>
-				</image>
 				<executable>true</executable>
 					<excludes>
 						<exclude>
