@@ -3,14 +3,14 @@ package com.thehecklers.aircraftpositions;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.thehecklers.aircraftpositions.AircraftRepository;
+import com.thehecklers.aircraftpositions.AircraftRepositor;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Component
 public class PositionRetriever {
-    private final AircraftRepository repository;
+    private final AircraftRepositor repository;
     private final WebClient client = WebClient.create("http://localhost:7634");
 
     Iterable<Aircraft> retrieveAircraftPositions() {

@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Component
 public class PositionRetriever {
-    private final AircraftRepository repository;
+    private final AircraftRepositor repository;
     private final WebClient client = WebClient.create("http://localhost:7634");
 
     // Nuevo: sobrecarga sin argumentos para tests/controlador

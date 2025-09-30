@@ -12,12 +12,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.thehecklers.aircraftpositions.AircraftRepository;
+import com.thehecklers.aircraftpositions.AircraftRepositor;
 
 @DataJpaTest
 class AircraftRepositoryTest {
     @Autowired
-    private AircraftRepository repository;
+    private AircraftRepositor repository;
 
     private Aircraft ac1, ac2;
 

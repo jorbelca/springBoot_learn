@@ -8,6 +8,10 @@
     { "path": "8/planefinder" },
     { "path": "8/aircraft-positions" },
     { "path": "9/aircraft-positions" },
+    { "path": "10/aircraft-positions" },
+    { "path": "11/aircraft-positions" },
+    { "path": "12/aircraft-positions" },
+    { "path": "12/planefinder" },
     { "path": "demo_spring" }
   ],
   "settings": {
