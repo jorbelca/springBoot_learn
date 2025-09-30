@@ -16,6 +16,9 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,6 +40,7 @@
 		<dependency>
 			<groupId>de.flapdoodle.embed</groupId>
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			     <scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -59,11 +63,37 @@
     <artifactId>jna</artifactId>
     <version>5.12.1</version>
 </dependency>
+<dependency>
+    <groupId>io.projectreactor</groupId>
+    <artifactId>reactor-tools</artifactId>
+    <version>3.4.2</version>
+    <scope>test</scope>
+</dependency>
 
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>3.3.1</version>
+      <configuration>
+        <encoding>UTF-8</encoding>
+        <resources>
+          <resource>
+            <directory>src/main/resources</directory>
+            <filtering>false</filtering>
+          </resource>
+        </resources>
+        <testResources>
+          <testResource>
+            <directory>src/test/resources</directory>
+            <filtering>false</filtering>
+          </testResource>
+        </testResources>
+      </configuration>
+    </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
